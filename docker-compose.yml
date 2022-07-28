@@ -1,0 +1,11 @@
+version: '3'
+services:
+  scores:
+    build:
+      context: .
+    image: explabs/potee-scores
+    container_name: scores
+    environment:
+      - MONGO_HOST=mongo
+      - MONGO_PASS=admin
+      - ACCESS_SECRET=98hbun98hsdfsdwesdfs
