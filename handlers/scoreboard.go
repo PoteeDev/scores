@@ -32,5 +32,5 @@ func ShowScoreboard(c *gin.Context) {
 		scoreboard = append(scoreboard, entityScore)
 	}
 
-	c.JSON(http.StatusOK, gin.H{"scenario": scoreboard})
+	c.JSON(http.StatusOK, gin.H{"scoreboard": scoreboard})
 }

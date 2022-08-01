@@ -6,10 +6,10 @@ type Score struct {
 	TotalScore float64            `json:"total_score"`
 }
 type Service struct {
-	Hp     int     `json:"hp"`
-	Gained int     `json:"gained"`
-	Lost   int     `json:"lost"`
-	Score  float64 `json:"score"`
-	SLA    float64 `json:"sla"`
-	Status int     `json:"status"`
+	Reputation int     `json:"reputation"`
+	Gained     int     `json:"gained"`
+	Lost       int     `json:"lost"`
+	Score      float64 `json:"score"`
+	SLA        float64 `json:"sla"`
+	Status     int     `json:"status"`
 }
