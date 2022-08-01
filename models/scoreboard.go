@@ -1,15 +1,15 @@
 package models
 
 type Score struct {
-	ID         string             `json:"id"`
-	Srv        map[string]Service `json:"srv"`
-	TotalScore float64            `json:"total_score"`
+	ID         string             `bson:"id" json:"id"`
+	Srv        map[string]Service `bson:"srv" json:"srv"`
+	TotalScore float64            `bson:"total_score" json:"total_score"`
 }
 type Service struct {
-	Reputation int     `json:"reputation"`
-	Gained     int     `json:"gained"`
-	Lost       int     `json:"lost"`
-	Score      float64 `json:"score"`
-	SLA        float64 `json:"sla"`
-	Status     int     `json:"status"`
+	Reputation int     `bson:"reputation" json:"reputation"`
+	Gained     int     `bson:"gained" json:"gained"`
+	Lost       int     `bson:"lost" json:"lost"`
+	Score      float64 `bson:"score" json:"score"`
+	SLA        float64 `bson:"sla" json:"sla"`
+	Status     int     `bson:"status" json:"status"`
 }
