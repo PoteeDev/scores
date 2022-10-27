@@ -15,5 +15,6 @@ func main() {
 		})
 	})
 	r.GET("/scoreboard", middleware.TokenAuthMiddleware(), handlers.ShowScoreboard)
+	r.GET("/user", middleware.TokenAuthMiddleware(), handlers.EntityScore)
 	r.Run()
 }

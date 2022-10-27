@@ -23,11 +23,17 @@ func EntityScore(c *gin.Context) {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
-	err = col.FindOne(ctx, bson.M{"id": metadata.UserId}).Decode(&score)
+	var entityName string
+	if queryName := c.Query("name"); queryName != "" {
+		entityName = queryName
+	} else {
+		entityName = metadata.UserId
+	}
+	err = col.FindOne(ctx, bson.M{"id": entityName}).Decode(&score)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"detail": err.Error()})
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"score": score})
+	c.JSON(http.StatusOK, score)
 }
