@@ -19,7 +19,7 @@ func ShowScoreboard(c *gin.Context) {
 	defer cancel()
 
 	opts := options.Find()
-	opts.SetSort(bson.M{"place": -1})
+	opts.SetSort(bson.M{"place": 1})
 	results, err := col.Find(ctx, bson.M{}, opts)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"detail": err.Error()})
