@@ -29,7 +29,7 @@ func EntityScore(c *gin.Context) {
 	} else {
 		entityName = metadata.UserId
 	}
-	err = col.FindOne(ctx, bson.M{"id": entityName}).Decode(&score)
+	err = col.FindOne(ctx, bson.M{"name": entityName}).Decode(&score)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"detail": err.Error()})
 		return
